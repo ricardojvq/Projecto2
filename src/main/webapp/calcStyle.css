@@ -1,0 +1,196 @@
+@font-face {
+	font-family: 'Calc';
+	src: url("Calculator.ttf");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'RadioCalc';
+	src: url("RADIOLAND.TTF");
+	font-weight: normal;
+	font-style: normal;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-color: white;
+    margin: 0;
+}
+
+#opcao {
+    font-family: 'Open Sans';
+    text-align: center;
+    width: 80%;
+    height: 5%;
+    margin: 40px auto 0 auto;
+}
+
+#opcao ul {
+    float: right;
+}
+
+#opcao li {
+    display: inline-block;
+    margin: 5px;
+    
+}
+
+#opcao a, #opcao a:hover {
+    text-decoration: none;
+    color: firebrick;
+}
+
+#opcao a:hover {
+    font-weight: 900;
+}
+
+#calc {
+    width: 80%;
+    height: 70%;
+    margin: 40px auto 0 auto;
+    background-color: silver;
+    padding-top: 50px;
+}
+
+#calcSimples {
+    width: 40%;
+    margin: 40px auto 0 auto;
+    background-color: cornflowerblue;
+    padding-top: 25px;
+}
+
+.screen {
+	font-family: 'Calc';
+    width: 100%;
+    display: block;
+    text-align: right;
+    box-sizing: content-box;
+    width: 70%;
+    font-size: 30px;
+    background-color: white;
+    box-shadow: inset 2px 2px 2px 0px rgba(0,0,0,0.5);
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 5px;
+    padding-left: 5px;
+    overflow-x: scroll;
+}
+
+#teclado {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.linha {
+    font-family: helvetica;
+    font-size: 0px;
+    width: 80%;
+    margin: 0 auto 0 auto;
+    background-color: darkslategray;
+    box-sizing: content-box;
+}
+
+.linha input[type=button] {
+    font-size: 28px;
+    color: whitesmoke;
+    width: 25%;
+    display: inline-block;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    text-align: center;
+    font-weight: 700;
+}
+div.even {
+    background-color: beige;
+}
+
+.myButton {
+	-moz-box-shadow:inset 0px 1px 0px 0px #54a3f7;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #54a3f7;
+	box-shadow:inset 0px 1px 0px 0px #54a3f7;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #007dc1), color-stop(1, #0061a7));
+	background:-moz-linear-gradient(top, #007dc1 5%, #0061a7 100%);
+	background:-webkit-linear-gradient(top, #007dc1 5%, #0061a7 100%);
+	background:-o-linear-gradient(top, #007dc1 5%, #0061a7 100%);
+	background:-ms-linear-gradient(top, #007dc1 5%, #0061a7 100%);
+	background:linear-gradient(to bottom, #007dc1 5%, #0061a7 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#007dc1', endColorstr='#0061a7',GradientType=0);
+	background-color:#007dc1;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+	border:1px solid #124d77;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:arial;
+	font-size:20px;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #154682;
+	width: 25%;
+}
+.myButton:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #0061a7), color-stop(1, #007dc1));
+	background:-moz-linear-gradient(top, #0061a7 5%, #007dc1 100%);
+	background:-webkit-linear-gradient(top, #0061a7 5%, #007dc1 100%);
+	background:-o-linear-gradient(top, #0061a7 5%, #007dc1 100%);
+	background:-ms-linear-gradient(top, #0061a7 5%, #007dc1 100%);
+	background:linear-gradient(to bottom, #0061a7 5%, #007dc1 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#0061a7', endColorstr='#007dc1',GradientType=0);
+	background-color:#0061a7;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+.myButtonNum {
+	-moz-box-shadow:inset 0px 1px 0px 0px #91b8b3;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #91b8b3;
+	box-shadow:inset 0px 1px 0px 0px #91b8b3;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #768d87), color-stop(1, #6c7c7c));
+	background:-moz-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+	background:-webkit-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+	background:-o-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+	background:-ms-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+	background:linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#768d87', endColorstr='#6c7c7c',GradientType=0);
+	background-color:#768d87;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+	border:1px solid #566963;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:arial;
+	font-size:20px;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2b665e;
+	width: 25%;
+}
+.myButtonNum:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #6c7c7c), color-stop(1, #768d87));
+	background:-moz-linear-gradient(top, #6c7c7c 5%, #768d87 100%);
+	background:-webkit-linear-gradient(top, #6c7c7c 5%, #768d87 100%);
+	background:-o-linear-gradient(top, #6c7c7c 5%, #768d87 100%);
+	background:-ms-linear-gradient(top, #6c7c7c 5%, #768d87 100%);
+	background:linear-gradient(to bottom, #6c7c7c 5%, #768d87 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#6c7c7c', endColorstr='#768d87',GradientType=0);
+	background-color:#6c7c7c;
+}
+.myButtonNum:active {
+	position:relative;
+	top:1px;
+}
+
