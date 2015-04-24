@@ -134,7 +134,7 @@ public class Calculator implements Serializable {
 	}
 	
 	public void getPercentage() {
-		String[] exp = expression.split("[+-/*] && ");
+		String[] exp = expression.split("[-+*/]");
 		String per = "";
 		int indArray = 0;
 		Double result = 0.0;
@@ -146,25 +146,36 @@ public class Calculator implements Serializable {
 			indArray++;
 		}
 		int i = expression.indexOf(per + "%");
+		System.out.println("indice String: "+i);
 		if (i == 0) {
 			Double num = Double.parseDouble(per);
 			Double percentage = num/100;
 			expression = Double.toString(percentage);
 		} else {
+			System.out.println(indArray+" - indArray");
 			double num1 = Double.parseDouble(exp[indArray-1]);
 			double num2 = Double.parseDouble(per);
 			if (expression.charAt(i-1) == '+') {
 				result = num1 + (num1*num2)/100;
-			} else if (expression.charAt(i-1) == '+') {
+			} else if (expression.charAt(i-1) == '-') {
 				result = num1 - (num1*num2)/100;
 			} else if (expression.charAt(i-1) == '*') {
 				result = (num1*num2)/100;
 			} else {
-				result = (num1*100)/num2;
+				if (num2==0) {
+					expression = "Erro: Divisao por zero!";
+					result = 0.0;
+				} else {
+					result = (num1*100)/num2;
+				}
 			}
-			String r = Double.toString(result);
-			int indDireita = expression.indexOf(exp[indArray-1]);
-			expression = expression.substring(0, indDireita) + r;
+			if (result == 0.0) {
+				// Do nothing
+			} else {
+				String r = Double.toString(result);
+				int indDireita = expression.indexOf(exp[indArray-1]);
+				expression = expression.substring(0, indDireita) + r;
+			}
 		}
 	}
 
