@@ -94,7 +94,6 @@ body {
     font-size: 0px;
     width: 80%;
     margin: 0 auto 0 auto;
-    background-color: darkslategray;
     box-sizing: content-box;
 }
 
@@ -109,7 +108,6 @@ body {
     font-weight: 700;
 }
 div.even {
-    background-color: beige;
 }
 
 .myButton {

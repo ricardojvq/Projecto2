@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="calcStyle.css" />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300'
+	rel='stylesheet' type='text/css' />
+</head>
+
+<body>
+	<ui:composition template="/WEB-INF/layout.xhtml">
+		<ui:define name="conteudo">
+			<div id="calcSimples">
+				<div id="screen">
+					<h:outputText styleClass="screen" value="#{calculator.expression}" />
+				</div>
+				<div id="teclado">
+					<h:form>
+						<div class="linha odd">
+							<h:commandButton styleClass="myButton" id="AC" action="calc1"
+								value="AC" actionListener="#{calculator.key}" />
+							<h:commandButton styleClass="myButton" id="moreLess"
+								action="calc1" value="+/-" actionListener="#{calculator.key}" />
+							<h:commandButton styleClass="myButton" id="percent"
+								action="calc1" value="%" actionListener="#{calculator.key}" />
+							<h:commandButton styleClass="myButton" id="divide" action="calc1"
+								value="/" actionListener="#{calculator.key}" />
+						</div>
+						<div class="linha even">
+							<h:commandButton styleClass="myButtonNum" id="seven"
+								action="calc1" value="7" actionListener="#{calculator.key}" />
+							<h:commandButton styleClass="myButtonNum" id="eight"
+								action="calc1" value="8" actionListener="#{calculator.key}" />
+							<h:commandButton styleClass="myButtonNum" id="nine"
+								action="calc1" value="9" actionListener="#{calculator.key}" />
+							<h:commandButton styleClass="myButton" id="multiply"
+								action="calc1" value="x" actionListener="#{calculator.key}" />
+						</div>
+						<div class="linha odd">
+							<h:commandButton styleClass="myButtonNum" id="four"
+								action="calc1" value="4" actionListener="#{calculator.key}" />
+							<h:commandButton styleClass="myButtonNum" id="five"
+								action="calc1" value="5" actionListener="#{calculator.key}" />
+							<h:commandButton styleClass="myButtonNum" id="six" action="calc1"
+								value="6" actionListener="#{calculator.key}" />
+							<h:commandButton styleClass="myButton" id="plus" action="calc1"
+								value="+" actionListener="#{calculator.key}" />
+						</div>
+						<div class="linha even">
+							<h:commandButton styleClass="myButtonNum" id="one" action="calc1"
+								value="1" actionListener="#{calculator.key}" />
+							<h:commandButton styleClass="myButtonNum" id="two" action="calc1"
+								value="2" actionListener="#{calculator.key}" />
+							<h:commandButton styleClass="myButtonNum" id="three"
+								action="calc1" value="3" actionListener="#{calculator.key}" />
+							<h:commandButton styleClass="myButton" id="minus" action="calc1"
+								value="-" actionListener="#{calculator.key}" />
+						</div>
+						<div class="linha odd">
+							<h:commandButton styleClass="myButtonNum" id="zero"
+								action="calc1" value="0" actionListener="#{calculator.key}" />
+							<h:commandButton styleClass="myButton" id="remainder"
+								action="calc1" value="R" actionListener="#{calculator.key}" />
+							<h:commandButton styleClass="myButton" id="dot" action="calc1"
+								value="." actionListener="#{calculator.key}" />
+							<h:commandButton styleClass="myButton" id="equal" action="calc1"
+								value="=" actionListener="#{calculator.key}" />
+						</div>
+					</h:form>
+				</div>
+			</div>
+		</ui:define>
+	</ui:composition>
+</body>
+</html>
