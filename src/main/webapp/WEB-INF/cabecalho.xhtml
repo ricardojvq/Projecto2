@@ -8,10 +8,28 @@
 	<ui:composition>
 		<div id="opcao">
 			<ul>
-				<li><a href="calc1.xhtml">Normal</a></li>
-				<li><a href="calc2.xhtml">Científica</a></li>
+				<li id="linkE"><a href="calc1.xhtml">Normal</a></li>
+				<li id="linkD"><a href="calc2.xhtml">Científica</a></li>
 			</ul>
-		</div>
+			<div id="opcaoBox"></div>
+		</div><script>
+		
+			$('#linkE').hover(
+					function() {
+						$('#opcaoBox')
+						.transition({x:-200,opacity: 100},100,'linear');
+						});
+		
+		</script>
+		<script>
+
+			$('#linkD').hover(
+					function() {
+						$('#opcaoBox')
+						.transition({x:200,opacity: 100},100,'linear');
+						});
+		
+		</script>
 	</ui:composition>
 </body>
 </html>

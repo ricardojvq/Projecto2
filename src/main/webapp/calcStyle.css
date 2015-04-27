@@ -24,20 +24,46 @@ body {
 
 #opcao {
     font-family: 'Open Sans';
-    text-align: center;
     width: 80%;
     height: 5%;
     margin: 40px auto 0 auto;
 }
 
 #opcao ul {
-    float: right;
+	text-align:center;
+	padding-right: 50px;
 }
 
 #opcao li {
     display: inline-block;
-    margin: 5px;
+    font-size:40px;
     
+}
+
+#opcao li:hover {
+	transition: all 1s ease-in-out;
+}
+
+#linkE {
+	
+}
+
+#opcao li:after {
+	display: block;
+	content: '';
+	width: 400px;
+	clear: both;
+}
+
+#opcaoBox {
+	margin-left: auto;
+	margin-right: auto;
+	height: 20px;
+	width: 20px;
+	background-color: darkgray;
+	border: 1px solid silver;
+	border-radius: 20px;
+	
 }
 
 #opcao a, #opcao a:hover {
@@ -62,6 +88,13 @@ body {
     margin: 40px auto 0 auto;
     background-color: cornflowerblue;
     padding-top: 25px;
+}
+
+#calcSy {
+    width: 60%;
+    margin: 40px auto 0 auto;
+    background-color: cornflowerblue;
+    padding-top: 25px;	
 }
 
 .screen {
@@ -100,7 +133,7 @@ body {
 .linha input[type=button] {
     font-size: 28px;
     color: whitesmoke;
-    width: 25%;
+    width: 14%;
     display: inline-block;
     padding-bottom: 10px;
     padding-top: 10px;
@@ -108,6 +141,14 @@ body {
     font-weight: 700;
 }
 div.even {
+}
+
+#footr {
+	text-align:center;
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 40px;
 }
 
 .myButton {
@@ -188,6 +229,88 @@ div.even {
 	background-color:#6c7c7c;
 }
 .myButtonNum:active {
+	position:relative;
+	top:1px;
+}
+
+.myButtonSy {
+	-moz-box-shadow:inset 0px 1px 0px 0px #cf866c;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #cf866c;
+	box-shadow:inset 0px 1px 0px 0px #cf866c;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #d0451b), color-stop(1, #bc3315));
+	background:-moz-linear-gradient(top, #d0451b 5%, #bc3315 100%);
+	background:-webkit-linear-gradient(top, #d0451b 5%, #bc3315 100%);
+	background:-o-linear-gradient(top, #d0451b 5%, #bc3315 100%);
+	background:-ms-linear-gradient(top, #d0451b 5%, #bc3315 100%);
+	background:linear-gradient(to bottom, #d0451b 5%, #bc3315 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#d0451b', endColorstr='#bc3315',GradientType=0);
+	background-color:#d0451b;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+	border:1px solid #942911;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:20px;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #854629;
+	width:25%;
+}
+.myButtonSy:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #bc3315), color-stop(1, #d0451b));
+	background:-moz-linear-gradient(top, #bc3315 5%, #d0451b 100%);
+	background:-webkit-linear-gradient(top, #bc3315 5%, #d0451b 100%);
+	background:-o-linear-gradient(top, #bc3315 5%, #d0451b 100%);
+	background:-ms-linear-gradient(top, #bc3315 5%, #d0451b 100%);
+	background:linear-gradient(to bottom, #bc3315 5%, #d0451b 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#bc3315', endColorstr='#d0451b',GradientType=0);
+	background-color:#bc3315;
+}
+.myButtonSy:active {
+	position:relative;
+	top:1px;
+}
+
+.historyButton {
+	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f9f9f9), color-stop(1, #e9e9e9));
+	background:-moz-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+	background:-webkit-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+	background:-o-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+	background:-ms-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+	background:linear-gradient(to bottom, #f9f9f9 5%, #e9e9e9 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9f9f9', endColorstr='#e9e9e9',GradientType=0);
+	background-color:#f9f9f9;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	cursor:pointer;
+	color:#666666;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+}
+.historyButton:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #e9e9e9), color-stop(1, #f9f9f9));
+	background:-moz-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+	background:-webkit-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+	background:-o-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+	background:-ms-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+	background:linear-gradient(to bottom, #e9e9e9 5%, #f9f9f9 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#e9e9e9', endColorstr='#f9f9f9',GradientType=0);
+	background-color:#e9e9e9;
+}
+.historyButton:active {
 	position:relative;
 	top:1px;
 }

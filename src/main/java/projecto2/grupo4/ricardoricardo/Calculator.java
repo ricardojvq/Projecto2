@@ -17,6 +17,7 @@ public class Calculator implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private String expression = "0";
 	private boolean reset = false;
+	private History calcHistory;
 
 	public void key(ActionEvent event) {
 		if (reset) {
@@ -53,7 +54,7 @@ public class Calculator implements Serializable {
 			this.getResult();
 			break;
 		} case "remainder": {
-			add = "%";
+			add = "R";
 			break;
 		} case "dot": {
 			add = ".";
@@ -111,25 +112,29 @@ public class Calculator implements Serializable {
 
 	public void negative() {
 		String[] exp = expression.split("[-+*/]");
-		int i = expression.indexOf(exp[exp.length-1]); // índice do último número (depois do operador)
-		String last = exp[exp.length-1]; // último número
-		if (i == 0) {
-			expression = "-" + expression;
-		} else if (i == 1 && expression.charAt(0) == '-') {
-			expression = expression.substring(1);
-		} else {
-			if (expression.substring(i-1, i).equals("-")) {
-				if (expression.substring(i-2, i-1).equals("+") || expression.substring(i-2, i-1).equals("*") || expression.substring(i-2, i-1).equals("/")) {
-					expression = expression.substring(0, i-1) + last;
-				} else {
-					expression = expression.substring(0, i-1) + "+" + last;
-				}
+		if (expression.length() > 0) {
+			int i = expression.indexOf(exp[exp.length-1]); // índice do último número (depois do operador)
+			String last = exp[exp.length-1]; // último número
+			if (i == 0) {
+				expression = "-" + expression;
+			} else if (i == 1 && expression.charAt(0) == '-') {
+				expression = expression.substring(1);
 			} else {
-				Double r = Double.parseDouble(last);
-				Double f = r * -1;
-				int ind = expression.indexOf(last);
-				expression = expression.substring(0, ind) + Double.toString(f);
+				if (expression.substring(i-1, i).equals("-")) {
+					if (expression.substring(i-2, i-1).equals("+") || expression.substring(i-2, i-1).equals("*") || expression.substring(i-2, i-1).equals("/")) {
+						expression = expression.substring(0, i-1) + last;
+					} else {
+						expression = expression.substring(0, i-1) + "+" + last;
+					}
+				} else {
+					Double r = Double.parseDouble(last);
+					Double f = r * -1;
+					int ind = expression.indexOf(last);
+					expression = expression.substring(0, ind) + Double.toString(f);
+				}
 			}
+		} else {
+			this.expression = "0";
 		}
 	}
 	
@@ -180,16 +185,23 @@ public class Calculator implements Serializable {
 	}
 
 	public void getResult() {
+		for (int i = 0; i < expression.length(); i++) {
+			if (expression.charAt(i) == 'R') {
+				expression = expression.replaceAll("R", "%");
+			}
+		}
 		Expression e = new ExpressionBuilder(expression)
 		.build();
 		try {
+			String expr = this.expression;
 			double result = e.evaluate();
 			expression = Double.toString(result);
+			calcHistory.addToHistory(expr);
 		} catch (ArithmeticException ae) {
-			expression = "Divisão por zero";
+			expression = "Divisao por zero";
 			this.reset = true;
 		} catch (IllegalArgumentException ia) {
-			expression = "Operação inválida";
+			expression = "Operacao invalida";
 			this.reset = true;
 		}
 	}

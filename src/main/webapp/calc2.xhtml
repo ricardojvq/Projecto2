@@ -20,58 +20,92 @@
 				<div id="teclado">
 					<h:form>
 						<div class="linha odd">
-							<h:commandButton styleClass="myButton" id="AC" action="calc1"
+							<h:commandButton styleClass="myButton" id="AC" action="calc2"
 								value="AC" actionListener="#{calculator.key}" />
 							<h:commandButton styleClass="myButton" id="moreLess"
-								action="calc1" value="+/-" actionListener="#{calculator.key}" />
+								action="calc2" value="+/-" actionListener="#{calculator.key}" />
 							<h:commandButton styleClass="myButton" id="percent"
-								action="calc1" value="%" actionListener="#{calculator.key}" />
-							<h:commandButton styleClass="myButton" id="divide" action="calc1"
+								action="calc2" value="%" actionListener="#{calculator.key}" />
+							<h:commandButton styleClass="myButton" id="divide" action="calc2"
 								value="/" actionListener="#{calculator.key}" />
 						</div>
 						<div class="linha even">
 							<h:commandButton styleClass="myButtonNum" id="seven"
-								action="calc1" value="7" actionListener="#{calculator.key}" />
+								action="calc2" value="7" actionListener="#{calculator.key}" />
 							<h:commandButton styleClass="myButtonNum" id="eight"
-								action="calc1" value="8" actionListener="#{calculator.key}" />
+								action="calc2" value="8" actionListener="#{calculator.key}" />
 							<h:commandButton styleClass="myButtonNum" id="nine"
-								action="calc1" value="9" actionListener="#{calculator.key}" />
+								action="calc2" value="9" actionListener="#{calculator.key}" />
 							<h:commandButton styleClass="myButton" id="multiply"
-								action="calc1" value="x" actionListener="#{calculator.key}" />
+								action="calc2" value="x" actionListener="#{calculator.key}" />
 						</div>
 						<div class="linha odd">
 							<h:commandButton styleClass="myButtonNum" id="four"
-								action="calc1" value="4" actionListener="#{calculator.key}" />
+								action="calc2" value="4" actionListener="#{calculator.key}" />
 							<h:commandButton styleClass="myButtonNum" id="five"
-								action="calc1" value="5" actionListener="#{calculator.key}" />
-							<h:commandButton styleClass="myButtonNum" id="six" action="calc1"
+								action="calc2" value="5" actionListener="#{calculator.key}" />
+							<h:commandButton styleClass="myButtonNum" id="six" action="calc2"
 								value="6" actionListener="#{calculator.key}" />
-							<h:commandButton styleClass="myButton" id="plus" action="calc1"
+							<h:commandButton styleClass="myButton" id="plus" action="calc2"
 								value="+" actionListener="#{calculator.key}" />
 						</div>
 						<div class="linha even">
-							<h:commandButton styleClass="myButtonNum" id="one" action="calc1"
+							<h:commandButton styleClass="myButtonNum" id="one" action="calc2"
 								value="1" actionListener="#{calculator.key}" />
-							<h:commandButton styleClass="myButtonNum" id="two" action="calc1"
+							<h:commandButton styleClass="myButtonNum" id="two" action="calc2"
 								value="2" actionListener="#{calculator.key}" />
 							<h:commandButton styleClass="myButtonNum" id="three"
-								action="calc1" value="3" actionListener="#{calculator.key}" />
-							<h:commandButton styleClass="myButton" id="minus" action="calc1"
+								action="calc2" value="3" actionListener="#{calculator.key}" />
+							<h:commandButton styleClass="myButton" id="minus" action="calc2"
 								value="-" actionListener="#{calculator.key}" />
 						</div>
 						<div class="linha odd">
 							<h:commandButton styleClass="myButtonNum" id="zero"
-								action="calc1" value="0" actionListener="#{calculator.key}" />
+								action="calc2" value="0" actionListener="#{calculator.key}" />
 							<h:commandButton styleClass="myButton" id="remainder"
-								action="calc1" value="R" actionListener="#{calculator.key}" />
-							<h:commandButton styleClass="myButton" id="dot" action="calc1"
+								action="calc2" value="R" actionListener="#{calculator.key}" />
+							<h:commandButton styleClass="myButton" id="dot" action="calc2"
 								value="." actionListener="#{calculator.key}" />
-							<h:commandButton styleClass="myButton" id="equal" action="calc1"
+							<h:commandButton styleClass="myButton" id="equal" action="calc2"
 								value="=" actionListener="#{calculator.key}" />
+						</div>
+						<div class="linha even">
+							<h:commandButton styleClass="myButtonSy" id="sen" action="calc2"
+								value="sen" actionListener="#{calculator.key}" />
+							<h:commandButton styleClass="myButtonSy" id="cos" action="calc2"
+								value="cos" actionListener="#{calculator.key}" />
+							<h:commandButton styleClass="myButtonSy" id="tan" action="calc2"
+								value="tan" actionListener="#{calculator.key}" />
+							<h:commandButton styleClass="myButtonSy" id="asen" action="calc2"
+								value="asen" actionListener="#{calculator.key}" />
+						</div>
+						<div class="linha odd">
+							<h:commandButton styleClass="myButtonSy" id="acos" action="calc2"
+								value="acos" actionListener="#{calculator.key}" />
+							<h:commandButton styleClass="myButtonSy" id="atan" action="calc2"
+								value="atan" actionListener="#{calculator.key}" />
+							<h:commandButton styleClass="myButtonSy" id="ln" action="calc2"
+								value="ln" actionListener="#{calculator.key}" />
+							<h:commandButton styleClass="myButtonSy" id="log" action="calc2"
+								value="log" actionListener="#{calculator.key}" />
+						</div>
+						<div class="linha even">
+							<h:commandButton styleClass="myButtonSy" id="fact" action="calc2"
+								value="!x" actionListener="#{calculator.key}" />
+							<h:commandButton styleClass="myButtonSy" id="pot" action="calc2"
+								value="x^" actionListener="#{calculator.key}" />
+							<h:commandButton styleClass="myButtonSy" id="raiz2" action="calc2"
+								value="√" actionListener="#{calculator.key}" />
+							<h:commandButton styleClass="myButtonSy" id="euler" action="calc2"
+								value="e" actionListener="#{calculator.key}" />
 						</div>
 					</h:form>
 				</div>
 			</div>
+			
+		<script>
+			$('#opcaoBox').css({x:200});
+		</script>
 		</ui:define>
 	</ui:composition>
 </body>

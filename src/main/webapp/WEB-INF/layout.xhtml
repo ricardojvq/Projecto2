@@ -1,16 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
 
 <h:head>
 	<meta charset="utf-8" />
+	<script src="jquery-2.1.3.js" />
+	<script src="jquery.transit.min.js" />
+	<script src="clickOpen.js"/>
+  	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300'
 		rel='stylesheet' type='text/css' />
 	<link rel="stylesheet" href="calcStyle.css" />
 	<title>Calculadora</title>
+	<script>
+	$(document).ready(function() {
+		  $('.nav-toggle').click(function(){
+			//get collapse content selector
+			var collapse_content_selector = $(this).attr('href');					
+
+			//make the collapse content to be shown or hide
+			var toggle_switch = $(this);
+			$(collapse_content_selector).toggle(function(){
+			  if($(this).css('display')=='none'){
+                            //change the button label to be 'Show'
+				toggle_switch.html('Mostrar Histórico');
+			  }else{
+                            //change the button label to be 'Hide'
+				toggle_switch.html('Esconder Histórico');
+			  }
+			});
+		  });
+
+		});	</script>
 </h:head>
 
 <h:body>
@@ -24,6 +48,11 @@
 	<div id="conteudo">
 		<ui:insert name="conteudo">
 			<ui:include src="conteudo.xhtml" />
+		</ui:insert>
+	</div>
+	<div id="rodape">
+		<ui:insert name="rodape">
+			<ui:include src="rodape.xhtml" />
 		</ui:insert>
 	</div>
 
